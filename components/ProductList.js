@@ -1,4 +1,4 @@
-import { Card, ResourceList } from "@shopify/polaris";
+import { Card, ResourceItem, ResourceList } from "@shopify/polaris";
 import React from "react";
 import ProductItem from "./Productitem";
 
@@ -10,10 +10,12 @@ function ProductList({products}) {
             showHeader
             resourceName={{singular:"Product", plural:"Products"}}
             items={products}
-            renderItem={product => <ProductItem product={product} /> }
+            renderItem={product => {
+                return <ProductItem product={product} />
+            }}
             />
         </Card>
-    )
+    );
 }
 
-export default ProductList
+export default ProductList;
